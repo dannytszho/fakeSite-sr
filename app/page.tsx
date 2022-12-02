@@ -1,5 +1,9 @@
+import Image from 'next/image'
+
 export default function HomePage() {
     return (
-        <h1>homepage</h1>
+        <div>
+            <h1>homepage</h1>
+        </div>
     )
 }
