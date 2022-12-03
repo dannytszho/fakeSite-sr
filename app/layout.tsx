@@ -1,6 +1,7 @@
 import Nav from '../components/Nav'
 import '../styles/globals.css'
 import 'styles/libraryOverrides.css'
+import Footer from '../components/Footer'
 
 export default function RootLayout({
     children,
@@ -13,7 +14,7 @@ export default function RootLayout({
             <body>
                 <Nav />
                 {children}
-                <footer className="bottom-0 fixed">Footer</footer>
+                <Footer />
             </body>
         </html>
     )

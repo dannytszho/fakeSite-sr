@@ -27,7 +27,7 @@ export default function Nav() {
                 <div className="md:flex md:py-4 py-10 justify-end">
                     <div
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+                        className="text-sm absolute right-8 top-6 cursor-pointer md:hidden"
                     >
                         {isOpen ? (
                             <AiOutlineClose color="white" />
@@ -43,7 +43,7 @@ export default function Nav() {
                         {links.map((link: linksType) => (
                             <li
                                 key={link.name}
-                                className="md:ml-8 text-xl md:my-0 my-7"
+                                className="md:ml-8 text-sm md:my-0 my-7"
                             >
                                 <Link
                                     href={link.link}

@@ -1,6 +1,6 @@
 export default function HomePage() {
     return (
-        <div className="mt-96">
+        <div className="mt-96 h-full">
             <h1>The world&apos;s greatest fake site</h1>
             <span>
                 Create the world&apos;s greatest fake site and enjoy the breeze
