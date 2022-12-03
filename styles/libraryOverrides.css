@@ -1,0 +1,6 @@
+body {
+    background: url(../public/assets/hero-image.png) no-repeat;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}

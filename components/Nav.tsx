@@ -4,6 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useState } from 'react'
 import Image from 'next/image'
 import LogoImage from '../public/assets/logo.png'
+import ProfileImage from '../public/assets/profile.png'
 
 type linksType = {
     name: string
@@ -11,28 +12,19 @@ type linksType = {
 }
 
 const links = [
-    { name: 'Home', link: '/' },
-    { name: 'Help', link: '/help' },
     { name: 'Account', link: '/account' },
+    { name: 'Help', link: '/help' },
 ]
 
 export default function Nav() {
     const [isOpen, setIsOpen] = useState(true)
     return (
-        <div>
-            {/* <Image
-                className="w-full h-auto"
-                src={HeroImage}
-                alt="A kite on the sky and a man running on the beach"
-            > */}
-            <div className="absolute">
-                <Image
-                    src={LogoImage}
-                    alt="A kite on the sky and a man running on the beach"
-                />
+        <div className="mt-2 md:mt-4 md:mx-24 lg:mx-32">
+            <div className="absolute m-4">
+                <Image src={LogoImage} alt="A happy fox" />
             </div>
             <nav className="shawdow-md z-[2] w-full top-0 left-0">
-                <div className="md:flex md:py-4 py-10 justify-center">
+                <div className="md:flex md:py-4 py-10 justify-end">
                     <div
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
@@ -51,19 +43,23 @@ export default function Nav() {
                             >
                                 <Link
                                     href={link.link}
-                                    className="text-gray-800 hover:text-gray-400 duration-500"
+                                    className="text-white hover:text-gray-800 duration-500 mr-10"
                                 >
                                     {link.name}
                                 </Link>
                             </li>
                         ))}
-                        <div className="">
-                            <button>UserProfile</button>
-                        </div>
+                        <li style={{ borderRadius: '50%', overflow: 'hidden' }}>
+                            <Image
+                                src={ProfileImage}
+                                height={50}
+                                width={50}
+                                alt="A smiley face of myself"
+                            />
+                        </li>
                     </ul>
                 </div>
             </nav>
-            {/* </Image> */}
         </div>
     )
 }

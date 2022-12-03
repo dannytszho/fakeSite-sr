@@ -1,14 +1,6 @@
-import Image from 'next/image'
-import HeroImage from '../public/assets/hero-image.png'
-
 export default function HomePage() {
     return (
-        <div>
-            <Image
-                className="w-full h-auto"
-                src={HeroImage}
-                alt="A kite on the sky and a man running on the beach"
-            />
+        <div className="mt-96">
             <h1>The world&apos;s greatest fake site</h1>
             <span>
                 Create the world&apos;s greatest fake site and enjoy the breeze

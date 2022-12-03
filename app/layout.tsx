@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import '../styles/globals.css'
+import 'styles/libraryOverrides.css'
 
 export default function RootLayout({
     children,
