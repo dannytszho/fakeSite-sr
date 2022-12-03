@@ -47,7 +47,7 @@ export default function Nav() {
                             >
                                 <Link
                                     href={link.link}
-                                    className="text-white hover:text-gray-800 duration-500 mr-10"
+                                    className="text-blueish hover:text-blackish duration-500 mr-10"
                                 >
                                     {link.name}
                                 </Link>

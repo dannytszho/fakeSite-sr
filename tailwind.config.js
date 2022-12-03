@@ -11,6 +11,11 @@ module.exports = {
             lg: ['36px', '36px'],
             xl: ['48px', '48px'],
         },
+        colors: {
+            redish: '#EE2D1C',
+            blackish: '#4C4C51',
+            blueish: '#88939E',
+        },
         extend: {},
     },
     plugins: [],
