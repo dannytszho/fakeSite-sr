@@ -13,6 +13,7 @@ export default function RootLayout({
             <body>
                 <Nav />
                 {children}
+                <footer className="bottom-0 fixed">Footer</footer>
             </body>
         </html>
     )

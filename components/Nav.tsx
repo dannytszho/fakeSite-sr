@@ -29,7 +29,11 @@ export default function Nav() {
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
                     >
-                        {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+                        {isOpen ? (
+                            <AiOutlineClose color="white" />
+                        ) : (
+                            <AiOutlineMenu color="white" />
+                        )}
                     </div>
                     <ul
                         className={`md:flex md:items-center md:pb-0 pb-10 md:static md:z-auto z-[3] left-0 w-full md:w-auto md:pl-0 pl-9 absolute transition-all duration-500 ease-in ${
