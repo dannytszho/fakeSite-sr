@@ -11,6 +11,16 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'i.vimeocdn.com',
+                port: '',
+                pathname: '/video/**',
+            },
+        ],
+    },
 }
 
 module.exports = nextConfig
