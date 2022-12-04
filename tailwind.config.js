@@ -8,8 +8,8 @@ module.exports = {
     theme: {
         fontSize: {
             sm: ['22px', '28px'],
-            lg: ['36px', '36px'],
-            xl: ['48px', '48px'],
+            md: ['36px', '36px'],
+            lg: ['48px', '48px'],
         },
         colors: {
             redish: '#EE2D1C',

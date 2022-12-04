@@ -6,7 +6,7 @@ import Image from 'next/image'
 import LogoImage from '../public/assets/logo.png'
 import ProfileImage from '../public/assets/profile.png'
 
-type linksType = {
+export type linksType = {
     name: string
     link: string
 }
