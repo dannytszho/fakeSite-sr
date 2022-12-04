@@ -1,43 +1,55 @@
+import Link from 'next/link'
+import { linksType } from './Nav'
+
+const fakeSiteLinks = [
+    { name: 'About us', link: 'about-us' },
+    { name: 'Press', link: 'press' },
+    { name: 'Policies', link: 'policies' },
+    { name: 'Help', link: 'help' },
+]
+const accountLinks = [
+    { name: 'Edit Profile', link: 'edit-profile' },
+    { name: 'Friends', link: 'friends' },
+    { name: 'Social', link: 'social' },
+    { name: 'Delete Profile', link: 'delete-profile' },
+]
+
 export default function Footer() {
     return (
         <>
-            <div className="bg-gray-50 h-1/3 w-full flex md:flex-row flex-col items-start">
+            <div className="bg-gray-50 h-1/3 w-full flex md:flex-row flex-col items-start mx-10 md:mx-20 lg:mx-36 gap-10 md:gap-20">
                 <div className="p-5">
                     <ul>
-                        <p className="text-gray-800 font-bold text-2xl pb-4">
+                        <p className="text-redish font-bold text-2xl pb-4">
                             Fakesite
                         </p>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            About Us
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Press
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Policies
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Help
-                        </li>
+                        {fakeSiteLinks.map((link: linksType) => (
+                            <li key={link.name}>
+                                <Link
+                                    href={link.link}
+                                    className="text-blueish text-md pb-2 hover:text-blue-600 cursor-pointer"
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="p-5">
                     <ul>
-                        <p className="text-gray-800 font-bold text-2xl pb-4">
+                        <p className="text-redish font-bold text-2xl pb-4">
                             Account
                         </p>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Edit Profile
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Friends
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Social
-                        </li>
-                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            Delete Profile
-                        </li>
+                        {accountLinks.map((link: linksType) => (
+                            <li key={link.name}>
+                                <Link
+                                    href={link.link}
+                                    className="text-blueish text-md pb-2 hover:text-blue-600 cursor-pointer"
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
