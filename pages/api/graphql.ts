@@ -2,29 +2,8 @@ import 'reflect-metadata'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { ApolloServer } from 'apollo-server-micro'
 import Cors from 'cors'
-import {
-    buildSchema,
-    Resolver,
-    Query,
-    Arg,
-    ObjectType,
-    Field,
-    ID,
-} from 'type-graphql'
-
-@ObjectType()
-export class Video {
-    @Field(() => ID)
-    name?: string
-}
-
-@Resolver(Video)
-export class VideosResolver {
-    @Query(() => [Video])
-    videos(): Video[] {
-        return [{ name: 'Video1' }, { name: 'Video2' }, { name: 'Video3' }]
-    }
-}
+import { buildSchema } from 'type-graphql'
+import { VideosResolver } from '../../src/schema/videos.resolver'
 
 const schema = await buildSchema({
     resolvers: [VideosResolver],
