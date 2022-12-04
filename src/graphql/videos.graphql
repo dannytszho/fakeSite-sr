@@ -1,5 +1,8 @@
 query getVideos {
     videos {
-        name
+        id
+        title
+        description
+        thumbnail_medium
     }
 }

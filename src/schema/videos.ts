@@ -42,13 +42,13 @@ export class Video {
     user_portrait_huge!: string
 
     @Field(() => Number)
-    stats_number_of_likes!: number
+    stats_number_of_likes?: number
 
     @Field(() => Number)
-    stats_number_of_plays!: number
+    stats_number_of_plays?: number
 
     @Field(() => Number)
-    stats_number_of_comments!: number
+    stats_number_of_comments?: number
 
     @Field(() => Number)
     duration!: number
