@@ -1,5 +1,5 @@
-export const getVideosData = async () => {
-    const response = await fetch('http://localhost:5100/api/graphql', {
+export const getVideosData = async (url: string) => {
+    const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -21,7 +21,13 @@ export const getVideosData = async () => {
     if (!response.ok) throw new Error('Error!')
 
     const data = await response.json()
-    console.log(data)
+    // console.log(data.videos)
+    // const videosData = await Promise.all(
+    //     data.videos.map(async (obj: any) => {
+    //         return { ...obj }
+    //     })
+    // )
+    // console.log(videosData)
 
     return data
 }

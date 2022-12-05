@@ -20,9 +20,11 @@ export default function Nav() {
     const [isOpen, setIsOpen] = useState(true)
     return (
         <div className="mt-2 md:mt-4 md:mx-24 lg:mx-32">
-            <div className="absolute m-4">
-                <Image src={LogoImage} alt="A happy fox" />
-            </div>
+            <Link href="/">
+                <div className="absolute m-4">
+                    <Image src={LogoImage} alt="A happy fox" />
+                </div>
+            </Link>
             <nav className="shawdow-md z-[2] w-full top-0 left-0">
                 <div className="md:flex md:py-4 py-10 justify-end">
                     <div

@@ -1,27 +1,25 @@
 import Image from 'next/image'
+import Videos from '../components/Videos'
 import { Video } from '../src/generated/graphql'
-import { getVideosData } from './Video'
 
-const url = 'http://localhost:5100/api/graphql'
-
-export default async function HomePage() {
-    const videos = await getVideosData(url)
-    console.log(videos.data)
+export default function HomePage() {
     return (
-        <div className="mt-96 h-full">
-            {videos.data.videos.map((video: Video) => (
-                <div key={video.id}>
-                    <div>{video.title}</div>
+        <div>
+            {/* Hero section*/}
+            <section className="grid place-items-center mt-28 text-center">
+                <h1 className="text-lg">The world&apos;s greatest fake site</h1>
+                <p className="text-sm text-[#FFF] mt-6">
+                    Create the world&apos;s greatest fake site and enjoy
+                    <br />
+                    the breeze of fresh air when you complete it
+                </p>
+                <button className="text-[#FFF] text-sm bg-redish min-h-[55px] px-8 rounded-full">
+                    Do something awesome
+                </button>
+            </section>
 
-                    <div>{video.description}</div>
-                    <Image
-                        src={video.thumbnail_medium}
-                        width={400}
-                        height={300}
-                        alt="thumbnail"
-                    />
-                </div>
-            ))}
+            <Videos />
+
             <h1>The world&apos;s greatest fake site</h1>
             <span>
                 Create the world&apos;s greatest fake site and enjoy the breeze

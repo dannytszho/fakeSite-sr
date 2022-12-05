@@ -1,0 +1,29 @@
+[33m3581412[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Add sit-map dir and SiteMapPage.tsx
+[33md9607b7[m Add privacy dir and PrivacyPage.tsx
+[33m463af5d[m Add terms dir and TermsPage.tsx
+[33m4a71995[m fetch Videos data with server component
+[33m2193a51[m[33m ([m[1;32m2193a51[m[33m)[m Configure codegen.yml for type protection
+[33m51f1375[m Refactor schema and resolver with type-graphql
+[33m40cfacd[m Add CORS Middleware between Next.js and Apollo studio
+[33m6de2a63[m Configure Apollo Server with type-graphql and webpack
+[33m9f8d17c[m Add graphql.ts in API route
+[33m32e6ad5[m Style Footer.tsx
+[33m14c0ae9[m Add delete-profile dir & DeleteProfilePage
+[33m3808404[m Add social dir & SocialPage
+[33m534ef8b[m Add friends dir & FriendsPage
+[33m44f197a[m Add edit-profile dir & EditProfilePage
+[33m6a88676[m Add help dir & HelpPage
+[33me6c99c1[m Add policies dir & PoliciesPage
+[33mc7b2597[m Add press dir & PressPage
+[33mca1d3e8[m Add about-us dir & AboutUsPage
+[33m605d410[m Refactor and style Footer.tsx
+[33m3357076[m Configure custom colors
+[33m47474a0[m Configure line heights with custom font sizes
+[33m6edcf09[m Style Responsive Footer
+[33m95e86ad[m Add Footer.tsx
+[33m261d67d[m Style responsive Navbar
+[33mcb3e4f2[m Add nav.tsx
+[33m901957c[m Add prettier
+[33m20825f3[m Enable usage of app dir
+[33m179d408[m Add tailwindCSS
+[33m97f0fd4[m Initial commit

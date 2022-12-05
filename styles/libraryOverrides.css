@@ -1,6 +1,12 @@
 body {
     background: url(../public/assets/hero-image.png) no-repeat;
-    height: 40vh;
+    height: 78vh;
     background-size: cover;
     background-position: center;
+}
+
+h1 {
+    size: 48px;
+    line-height: 48px;
+    color: #fff;
 }

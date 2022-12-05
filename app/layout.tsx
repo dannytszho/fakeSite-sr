@@ -2,7 +2,6 @@ import Nav from '../components/Nav'
 import '../styles/globals.css'
 import 'styles/libraryOverrides.css'
 import Footer from '../components/Footer'
-import ReactQueryWrapper from './ReactQueryWrapper'
 
 export default function RootLayout({
     children,
@@ -14,7 +13,7 @@ export default function RootLayout({
             <head />
             <body>
                 <Nav />
-                {children}
+                <div>{children}</div>
                 <Footer />
             </body>
         </html>
