@@ -49,7 +49,7 @@ export default function VideosCard() {
             {videos?.map((video: Video) => (
                 <div key={video.id}>
                     <div data-testid="titleInfo">{video.title}</div>
-                    <div>{video.description}</div>
+                    <p>{video.description}</p>
                     <Image
                         src={video.thumbnail_medium}
                         width={400}
