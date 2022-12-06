@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { getVideosData } from './getVideo'
 import Image from 'next/image'
 import { Video } from '../src/generated/graphql'
 
@@ -11,13 +10,14 @@ export default function VideosCard() {
 
     useEffect(() => {
         let isMounted = true
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: `
+        try {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: `
                 query getVideos {
                     videos {
                         id
@@ -26,15 +26,18 @@ export default function VideosCard() {
                         thumbnail_medium
                     }
                 }            
-                  `,
-            }),
-        })
-            .then((res) => res.json())
-            .then((video) => {
-                if (isMounted) {
-                    setVideos(video.data.videos)
-                }
+                `,
+                }),
             })
+                .then((res) => res.json())
+                .then((video) => {
+                    if (isMounted) {
+                        setVideos(video.data.videos)
+                    }
+                })
+        } catch (err) {
+            console.log(err)
+        }
 
         return () => {
             isMounted = false
@@ -42,10 +45,10 @@ export default function VideosCard() {
     }, [])
 
     return (
-        <>
+        <div>
             {videos?.map((video: Video) => (
                 <div key={video.id}>
-                    <div>{video.title}</div>
+                    <div data-testid="titleInfo">{video.title}</div>
                     <div>{video.description}</div>
                     <Image
                         src={video.thumbnail_medium}
@@ -55,6 +58,6 @@ export default function VideosCard() {
                     />
                 </div>
             ))}
-        </>
+        </div>
     )
 }
