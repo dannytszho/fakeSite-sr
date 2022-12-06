@@ -9,39 +9,33 @@ const url = 'http://localhost:5100/api/graphql'
 export default function VideosCard() {
     const [videos, setVideos] = useState([])
 
-    async function fetchVideo() {
-        try {
-            const res = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    query: `
-                    query getVideos {
-                        videos {
-                            id
-                            title
-                            description
-                            thumbnail_medium
-                        }
-                    }            
-                      `,
-                }),
-            })
-
-            const videos = await res.json()
-            return videos
-        } catch (err: any) {
-            throw new err()
-        }
-    }
-
     useEffect(() => {
         let isMounted = true
-        fetchVideo().then((video) => {
-            setVideos(video.data.videos)
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: `
+                query getVideos {
+                    videos {
+                        id
+                        title
+                        description
+                        thumbnail_medium
+                    }
+                }            
+                  `,
+            }),
         })
+            .then((res) => res.json())
+            .then((video) => {
+                if (isMounted) {
+                    setVideos(video.data.videos)
+                }
+            })
+
         return () => {
             isMounted = false
         }
