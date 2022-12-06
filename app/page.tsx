@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Videos from '../components/Videos'
+import VideosCard from '../components/VideosCard'
 import { Video } from '../src/generated/graphql'
 
 export default function HomePage() {
@@ -18,7 +18,7 @@ export default function HomePage() {
                 </button>
             </section>
 
-            <Videos />
+            <VideosCard />
 
             <h1>The world&apos;s greatest fake site</h1>
             <span>

@@ -6,12 +6,31 @@ import { Video } from '../src/generated/graphql'
 
 const url = 'http://localhost:5100/api/graphql'
 
-export default function Videos() {
+export default function VideosCard() {
     const [videos, setVideos] = useState([])
 
     async function fetchVideo() {
         try {
-            const videos = await getVideosData(url)
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: `
+                    query getVideos {
+                        videos {
+                            id
+                            title
+                            description
+                            thumbnail_medium
+                        }
+                    }            
+                      `,
+                }),
+            })
+
+            const videos = await res.json()
             return videos
         } catch (err: any) {
             throw new err()
@@ -19,16 +38,20 @@ export default function Videos() {
     }
 
     useEffect(() => {
+        let isMounted = true
         fetchVideo().then((video) => {
             setVideos(video.data.videos)
         })
+        return () => {
+            isMounted = false
+        }
     }, [])
 
     return (
         <>
             {videos?.map((video: Video) => (
                 <div key={video.id}>
-                    <div key={video.id}>{video.title}</div>
+                    <div>{video.title}</div>
                     <div>{video.description}</div>
                     <Image
                         src={video.thumbnail_medium}
