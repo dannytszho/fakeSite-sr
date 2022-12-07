@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import { linksType } from './Nav'
+import { LinksType } from './Nav'
 import LogoImage from '../public/assets/logo.png'
 
 const fakeSiteLinks = [
@@ -30,7 +30,7 @@ export default function Footer() {
                 <div className="py-5">
                     <ul>
                         <p className="text-redish font-bold pb-4">Fakesite</p>
-                        {fakeSiteLinks.map((link: linksType) => (
+                        {fakeSiteLinks.map((link: LinksType) => (
                             <li key={link.name}>
                                 <Link
                                     href={link.link}
@@ -45,7 +45,7 @@ export default function Footer() {
                 <div className="py-5">
                     <ul>
                         <p className="text-redish font-bold pb-4">Account</p>
-                        {accountLinks.map((link: linksType) => (
+                        {accountLinks.map((link: LinksType) => (
                             <li key={link.name}>
                                 <Link
                                     href={link.link}
@@ -68,7 +68,7 @@ export default function Footer() {
                 <div className="footer-nav w-full bottom-0 left-0">
                     <div className="md:flex md:py-4 py-10 justify-end">
                         <ul className="md:flex md:items-center md:pb-0 pb-10 md:static md:z-auto z-[3] left-0 w-full md:w-auto md:pl-0 pl-9 absolute transition-all duration-500 ease-in">
-                            {footerNavLinks.map((link: linksType) => (
+                            {footerNavLinks.map((link: LinksType) => (
                                 <li
                                     key={link.name}
                                     className="md:ml-8 md:my-0 my-7"
