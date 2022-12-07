@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Video } from '../src/generated/graphql'
 
-const url = 'https://fake-site-sr.vercel.app/api/graphql'
+const url = process.env.NEXT_PUBLIC_API_URL!
 
 export default function VideosCard() {
     const [videos, setVideos] = useState([])
