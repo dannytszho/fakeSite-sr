@@ -33,7 +33,7 @@ function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: FnType) {
     })
 }
 
-const server = new ApolloServer({ schema })
+const server = new ApolloServer({ schema, introspection: true })
 
 export const config = {
     api: {
