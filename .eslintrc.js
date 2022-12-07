@@ -14,7 +14,6 @@ module.exports = {
         'plugin:eslint-comments/recommended',
         'plugin:jest/recommended',
         'plugin:promise/recommended',
-        'plugin:unicorn/recommended',
         'prettier', // Prettier must be last brodie.
     ],
     parser: '@typescript-eslint/parser',
@@ -27,9 +26,9 @@ module.exports = {
         'jest',
         'promise',
         'import',
-        'unicorn',
         'prettier',
     ],
+    ignorePatterns: ['src/generated/*.ts', 'src/schema/*.ts'],
     rules: {
         'prettier/prettier': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
@@ -40,7 +39,6 @@ module.exports = {
         'no-use-before-define': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-use-before-define': ['error'],
-        'unicorn/prevent-abbreviations': 'off',
         'import/no-extraneous-dependencies': [
             'error',
             {

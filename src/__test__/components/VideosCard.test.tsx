@@ -1,12 +1,13 @@
+import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
-import VideosCard from '../../../components/VideosCard'
-import { graphql } from 'msw'
 import { setupServer } from 'msw/node'
+import { graphql } from 'msw'
+import VideosCard from '../../../components/VideosCard'
 import 'whatwg-fetch'
 
 const server = setupServer(
-    graphql.query('getVideos', (req, res, ctx) => {
-        return res(
+    graphql.query('getVideos', (req, res, ctx) =>
+        res(
             ctx.data({
                 videos: [
                     {
@@ -20,7 +21,7 @@ const server = setupServer(
                 ],
             })
         )
-    })
+    )
 )
 
 beforeAll(() => server.listen())

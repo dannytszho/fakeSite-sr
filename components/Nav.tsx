@@ -1,12 +1,13 @@
 'use client'
+
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import LogoImage from '../public/assets/logo.png'
 import ProfileImage from '../public/assets/profile.png'
 
-export type linksType = {
+export type LinksType = {
     name: string
     link: string
 }
@@ -27,7 +28,8 @@ export default function Nav() {
             </Link>
             <nav className="shawdow-md z-[2] w-full top-0 left-0">
                 <div className="md:flex md:py-4 py-10 justify-end">
-                    <div
+                    <button
+                        type="button"
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-sm absolute right-8 top-6 cursor-pointer md:hidden"
                     >
@@ -36,13 +38,13 @@ export default function Nav() {
                         ) : (
                             <AiOutlineMenu color="white" />
                         )}
-                    </div>
+                    </button>
                     <ul
                         className={`md:flex md:items-center md:pb-0 pb-10 md:static md:z-auto z-[3] left-0 w-full md:w-auto md:pl-0 pl-9 absolute transition-all duration-500 ease-in ${
                             isOpen ? 'top-20' : 'top-[-490px]'
                         }`}
                     >
-                        {links.map((link: linksType) => (
+                        {links.map((link: LinksType) => (
                             <li
                                 key={link.name}
                                 className="md:ml-8 text-sm md:my-0 my-7"
@@ -55,8 +57,9 @@ export default function Nav() {
                                 </Link>
                             </li>
                         ))}
-                        <li style={{ borderRadius: '50%', overflow: 'hidden' }}>
+                        <li>
                             <Image
+                                className="rounded-full"
                                 src={ProfileImage}
                                 height={50}
                                 width={50}

@@ -5,6 +5,9 @@ import Cors from 'cors'
 import { buildSchema } from 'type-graphql'
 import { VideosResolver } from '../../src/schema/videos.resolver'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type FnType = (req: NextApiRequest, res: NextApiResponse, result: any) => void
+
 const schema = await buildSchema({
     resolvers: [VideosResolver],
 })
@@ -17,12 +20,9 @@ const cors = Cors({
 
 // Helper method to wait for a middleware to execute before continuing
 // And to throw an error when an error happens in a middleware
-function runMiddleware(
-    req: NextApiRequest,
-    res: NextApiResponse,
-    fn: Function
-) {
+function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: FnType) {
     return new Promise((resolve, reject) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         fn(req, res, (result: any) => {
             if (result instanceof Error) {
                 return reject(result)

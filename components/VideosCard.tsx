@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Video } from '../src/generated/graphql'
@@ -10,14 +11,14 @@ export default function VideosCard() {
 
     useEffect(() => {
         let isMounted = true
-        try {
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    query: `
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: `
                 query getVideos {
                     videos {
                         id
@@ -27,17 +28,18 @@ export default function VideosCard() {
                     }
                 }            
                 `,
-                }),
+            }),
+        })
+            .then((res) => res.json())
+            .then((video) => {
+                if (isMounted) {
+                    setVideos(video.data.videos)
+                }
+                return null
             })
-                .then((res) => res.json())
-                .then((video) => {
-                    if (isMounted) {
-                        setVideos(video.data.videos)
-                    }
-                })
-        } catch (err) {
-            console.log(err)
-        }
+            .catch((e) => {
+                throw e
+            })
 
         return () => {
             isMounted = false

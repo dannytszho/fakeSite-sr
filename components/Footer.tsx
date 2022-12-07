@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { linksType } from './Nav'
+import React from 'react'
 import Image from 'next/image'
+import { linksType } from './Nav'
 import LogoImage from '../public/assets/logo.png'
 
 const fakeSiteLinks = [
@@ -58,7 +59,7 @@ export default function Footer() {
                 </div>
             </div>
             <div>
-                <hr className="h-px bg-[#E8E8E8] border-0"></hr>
+                <hr className="h-px bg-[#E8E8E8] border-0" />
             </div>
             <div>
                 <div className="fox-icon absolute">
