@@ -1,4 +1,4 @@
-schema: http://localhost:5100/api/graphql
+schema: https://fake-site-sr.vercel.app/:5100/api/graphql
 documents: './src/**/*.graphql'
 generates:
     ./src/generated/graphql.ts:
