@@ -28,7 +28,7 @@ export type Query = {
 }
 
 export type QueryVideoArgs = {
-    id: Scalars['ID']
+    title: Scalars['String']
 }
 
 export type Video = {
@@ -56,6 +56,21 @@ export type Video = {
     width: Scalars['Float']
 }
 
+export type VideoByTitleQueryVariables = Exact<{
+    title: Scalars['String']
+}>
+
+export type VideoByTitleQuery = {
+    __typename?: 'Query'
+    video?: {
+        __typename?: 'Video'
+        id: string
+        title: string
+        description: string
+        thumbnail_medium: string
+    } | null
+}
+
 export type GetVideosQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetVideosQuery = {
@@ -69,6 +84,16 @@ export type GetVideosQuery = {
     }>
 }
 
+export const VideoByTitleDocument = gql`
+    query videoByTitle($title: String!) {
+        video(title: $title) {
+            id
+            title
+            description
+            thumbnail_medium
+        }
+    }
+`
 export const GetVideosDocument = gql`
     query getVideos {
         videos {
@@ -97,6 +122,21 @@ export function getSdk(
     withWrapper: SdkFunctionWrapper = defaultWrapper
 ) {
     return {
+        videoByTitle(
+            variables: VideoByTitleQueryVariables,
+            requestHeaders?: Dom.RequestInit['headers']
+        ): Promise<VideoByTitleQuery> {
+            return withWrapper(
+                (wrappedRequestHeaders) =>
+                    client.request<VideoByTitleQuery>(
+                        VideoByTitleDocument,
+                        variables,
+                        { ...requestHeaders, ...wrappedRequestHeaders }
+                    ),
+                'videoByTitle',
+                'query'
+            )
+        },
         getVideos(
             variables?: GetVideosQueryVariables,
             requestHeaders?: Dom.RequestInit['headers']

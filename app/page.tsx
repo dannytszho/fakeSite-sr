@@ -1,39 +1,40 @@
-import Image from 'next/image'
+import React from 'react'
+
 import VideosCard from '../components/VideosCard'
-import { Video } from '../src/generated/graphql'
 
 export default function HomePage() {
     return (
-        <div>
-            {/* Hero section*/}
-            <section className="grid place-items-center mt-28 text-center">
+        <div className="flex flex-col">
+            {/*  Hero section    */}
+            <section className="place-items-center mt-28 text-center">
                 <h1 className="text-lg">The world&apos;s greatest fake site</h1>
-                <p className="text-sm text-[#FFF] mt-6">
+                <p className="text-sm text-[#FFF]">
                     Create the world&apos;s greatest fake site and enjoy
                     <br />
                     the breeze of fresh air when you complete it
                 </p>
-                <button className="text-[#FFF] text-sm bg-redish min-h-[55px] px-8 rounded-full">
+                <button
+                    type="button"
+                    className="text-[#FFF] text-sm mt-6 bg-redish min-h-[55px] px-8 rounded-full"
+                >
                     Do something awesome
                 </button>
             </section>
 
             <VideosCard />
-
-            <h1>The world&apos;s greatest fake site</h1>
-            <span>
-                Create the world&apos;s greatest fake site and enjoy the breeze
-                of fresh air when you complete it
-            </span>
-            <button>Do something awesome</button>
-            <h2>Video Title (from videos.json)</h2>
-            <span>Video Description (from videos.json)</span>
-            <h3>Ready to have your cake and eat it too?</h3>
-            <span>
-                Start by designing the experience you have in mind. We&apos;ll
-                guide you through each step. If your experience meets the
-                quality standards, you&apos;ll hear more about what&apos;s next.
-            </span>
+            {/*  Content section    */}
+            <div className="text-center mt-6">
+                <h2 className="text-md">
+                    Ready to have your cake and eat it too?
+                </h2>
+                <p className="text-sm">
+                    Start by designing the experience you have in mind.
+                    We&apos;ll guide you through each step. If
+                    <br />
+                    your experience meets the quality standards, you&apos;ll
+                    hear more about what&apos;s next.
+                </p>
+            </div>
         </div>
     )
 }

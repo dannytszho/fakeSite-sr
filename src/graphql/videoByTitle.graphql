@@ -1,0 +1,8 @@
+query videoByTitle($title: String!) {
+    video(title: $title) {
+        id
+        title
+        description
+        thumbnail_medium
+    }
+}

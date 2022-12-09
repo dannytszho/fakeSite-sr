@@ -51,7 +51,7 @@ export default function Nav() {
                             >
                                 <Link
                                     href={link.link}
-                                    className="text-blueish hover:text-blackish duration-500 mr-10"
+                                    className="text-[#FFF] hover:text-blackish duration-500 mr-10"
                                 >
                                     {link.name}
                                 </Link>
@@ -59,7 +59,7 @@ export default function Nav() {
                         ))}
                         <li>
                             <Image
-                                className="rounded-full"
+                                className="rounded-full border-2 border-[#FFF]"
                                 src={ProfileImage}
                                 height={50}
                                 width={50}

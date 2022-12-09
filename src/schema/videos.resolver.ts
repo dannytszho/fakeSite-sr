@@ -6,8 +6,8 @@ import videos from './videos.json'
 @Resolver(Video)
 export class VideosResolver {
     @Query(() => Video, { nullable: true })
-    video(@Arg('id', () => ID) id: number): Video | undefined {
-        const video = videos.find((video) => video.id === id)
+    video(@Arg('title', () => String) title: string): Video | undefined {
+        const video = videos.find((video) => video.title === title)
         if (video === undefined) {
             throw new Error('Video not found')
         }

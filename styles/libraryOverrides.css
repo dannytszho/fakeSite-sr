@@ -10,3 +10,24 @@ h1 {
     line-height: 48px;
     color: #fff;
 }
+
+h2 {
+    size: 36px;
+    line-height: 36px;
+    color: #88939e;
+}
+
+p {
+    margin-top: 22px;
+}
+
+/* Example from https://stackoverflow.com/a/47073554/15674587   */
+.overlay {
+    background: 
+      /* top, transparent red, faked with gradient */ linear-gradient(
+            rgba(238, 46, 29, 0.35),
+            rgba(255, 177, 181, 1)
+        ),
+        /* bottom, image */ url(../public/assets/playbtn.png) no-repeat;
+    background-position: center;
+}

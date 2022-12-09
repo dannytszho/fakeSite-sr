@@ -65,7 +65,7 @@ export default function Footer() {
                 <div className="fox-icon absolute">
                     <Image src={LogoImage} alt="A happy fox" />
                 </div>
-                <div className="footer-nav w-full bottom-0 left-0">
+                <div className="footer-nav mb-20 w-full bottom-0 left-0">
                     <div className="md:flex md:py-4 py-10 justify-end">
                         <ul className="md:flex md:items-center md:pb-0 pb-10 md:static md:z-auto z-[3] left-0 w-full md:w-auto md:pl-0 pl-9 absolute transition-all duration-500 ease-in">
                             {footerNavLinks.map((link: LinksType) => (
