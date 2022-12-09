@@ -2,6 +2,7 @@
 
 Thank you for taking the time to take part in this coding assessment. Instructions are listed below, and if you have any questions, please email dan@firststreet.org directly. Please remember to be mindful of attention to detail with your build and the mockup provided.
 
+
 1. Build a fake website using `mockup.png` as your guide. The style guide is located in `StyleGuide.png`.
 2. Use NextJS and ensure components are created where relevant
 3. No mobile mockup is provided, how do you think this mobile site should look and function like?
@@ -29,18 +30,20 @@ https://vimeo.com/api/v2/channel/staffpicks/videos.json
 (Please be ensure to build out your API as an API route)[https://nextjs.org/docs/api-routes/introduction]. This API route must be a GraphQL backend that supports the mockup. An example schema is provided below, feel free to modify as needed.
 
 ```graphql
+
 schema {
-    query: Root
+	query: Root
 }
 
 type Root {
-    videos: [Video]
+	videos: [Video]
 }
 
 type Video {
-    id: integer
-    title: string
-    description: string
-    thumbnail: string
+	id: integer
+	title: string
+	description: string
+	thumbnail: string
 }
+
 ```
