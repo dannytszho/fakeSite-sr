@@ -5,8 +5,7 @@ import Image from 'next/image'
 import StockImage from '../public/assets/stockimage.png'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-// const url = process.env.NEXT_PUBLIC_API_URL!
-const url = 'http://localhost:5100/api/graphql'
+const url = process.env.NEXT_PUBLIC_API_URL!
 
 type VProps = {
     id: string
