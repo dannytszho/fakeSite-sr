@@ -70,7 +70,10 @@ export default function VideosCard() {
                 </p>
             </div>
             <div className="px-auto mx-auto w-full h-[250px] md:w-[463px] md:h-[257px]">
-                <button type="button" className="overlay z-10 basis-1/3">
+                <button
+                    type="button"
+                    className="overlay absolute z-10 basis-1/3"
+                >
                     <a href={video?.url}>
                         <Image
                             src={StockImage}
