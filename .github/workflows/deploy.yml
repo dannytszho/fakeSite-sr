@@ -19,5 +19,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
-      - name: Running lint
-        uses: yarn prePush
+      - name: "Running lint"
+        run: yarn prePush
