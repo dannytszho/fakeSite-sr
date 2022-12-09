@@ -2,17 +2,18 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-
 import StockImage from '../public/assets/stockimage.png'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const url = process.env.NEXT_PUBLIC_API_URL!
+// const url = process.env.NEXT_PUBLIC_API_URL!
+const url = 'http://localhost:5100/api/graphql'
 
 type VProps = {
     id: string
     title: string
     description: string
     thumbnail_medium: string
+    url?: string
 }
 
 export default function VideosCard() {
@@ -34,6 +35,7 @@ export default function VideosCard() {
                         title
                         description
                         thumbnail_medium
+                        url
                     }
                 }
                 `,
@@ -70,11 +72,13 @@ export default function VideosCard() {
             </div>
             <div className="mx-auto w-[380px] h-[250px] md:w-[463px] md:h-[257px]">
                 <button type="button" className="overlay mt-10 basis-1/3">
-                    <Image
-                        src={StockImage}
-                        className="mix-blend-overlay"
-                        alt="pic of a man cooking"
-                    />
+                    <a href={video?.url}>
+                        <Image
+                            src={StockImage}
+                            className="mix-blend-overlay"
+                            alt="pic of a man cooking"
+                        />
+                    </a>
                 </button>
             </div>
         </div>

@@ -12,6 +12,9 @@ export class Video {
     description!: string
 
     @Field(() => String)
+    url!: string
+
+    @Field(() => String)
     thumbnail_small!: string
 
     @Field(() => String)

@@ -13,7 +13,8 @@
         "lint": "next lint",
         "prettier-check": "yarn prettier -c .",
         "prettier-write": "yarn prettier -w .",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prePush": "yarn lint && yarn build && yarn prettier-check"
     },
     "dependencies": {
         "apollo-server": "^3.11.1",

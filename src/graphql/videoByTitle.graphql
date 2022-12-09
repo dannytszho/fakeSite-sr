@@ -4,5 +4,6 @@ query videoByTitle($title: String!) {
         title
         description
         thumbnail_medium
+        url
     }
 }
