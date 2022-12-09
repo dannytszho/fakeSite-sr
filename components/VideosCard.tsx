@@ -69,7 +69,7 @@ export default function VideosCard() {
                     {video?.description.replaceAll('<br />', '')}
                 </p>
             </div>
-            <div className="px-auto mx-auto w-full h-[250px] md:w-[463px] md:h-[257px]">
+            <div className="relative mx-auto w-full h-[250px] md:w-[380px] md:h-[257px]">
                 <button
                     type="button"
                     className="overlay absolute z-10 basis-1/3"
