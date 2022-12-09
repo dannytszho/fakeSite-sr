@@ -21,3 +21,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - name: "Running lint"
         run: yarn prePush
+      # - uses: amondnet/vercel-action@v20 #deploy
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.ORG_ID}} 
+      #     vercel-project-id: ${{ secrets.PROJECT_ID}} 
+      #     working-directory: ./

@@ -18,7 +18,7 @@ const links = [
 ]
 
 export default function Nav() {
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <div className="mt-2 md:mt-4 md:mx-24 lg:mx-32">
             <Link href="/">
